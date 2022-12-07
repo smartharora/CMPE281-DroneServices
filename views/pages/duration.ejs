@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <%- include('../partials/head'); %>
+    <%- include('../partials/sidebarHeader'); %>
+</head>
+
+<body>
+  <%- include('../partials/sidebar'); %>
+    <div class="container">
+      <h1 class="w-100 text-center m-2">Booking Process</h1>
+      <hr>
+    </div>
+    <%- include('../partials/selectDate'); %>
+      <%- include('../partials/sidebarFooter'); %>
+        <%- include('../partials/footer'); %>
+          <script>
+            $("#endTime").change(function () {
+              var startDate = document.getElementById("startTime").value;
+              var endDate = document.getElementById("endTime").value;
+              //    console.log(Date.parse(startDate));
+              //    console.log(Date.parse(endDate));
+              console.log(Date.parse(startDate) <= Date.parse(endDate));
+              if (Date.parse(endDate) <= Date.parse(startDate)) {
+                window.alert("End date should be greater than Start date");
+                //document.getElementById("endTime").value = "";
+              }
+            });
+
+
+
+          </script>
+</body>
+
+</html>

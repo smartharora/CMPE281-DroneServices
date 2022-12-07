@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Cmpe 281</title>
+    <style>
+        .no-print{
+            display:block;
+        }
+        @media print{
+            .no-print{
+                display:none;
+            }
+        }
+    </style>
+    <script>
+        var jsPrintAll = function () {
+            setTimeout(function () {
+                window.print();
+            }, 500);
+        }
+    </script>
+      <%- include('../partials/sidebarHeader'); %>
+</head>
+
+<body>
+    <%- include('../partials/sidebar'); %>
+    <div style="margin: 40px 30px;">
+        <h2 class="no-print">Booking Summery</h2>
+        <p class="no-print">Below are the booking details and billing details.</p>
+        <div class="row print">
+            <div class="card col" style="width: 200px; margin-right: 300px;">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img style="height: 200px; width: 200px" src="<%= drone.img_url %>" class="card-img-top"
+                            alt="Fissure in Sandstone" />
+                    </div>
+                    <div class="col-md-7 pt-4">
+                        <p class="float-left">
+                        <h6><%= drone.model %></h6>
+                        </p>
+                        <p class="float-left">
+                        <h6><%= drone.service %></h6>
+                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-geo-alt" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z" />
+                                    <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                                </svg>
+                                <span style="display: float-left"> <%= farm.address %></span>
+                                <div>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-calendar-date" viewBox="0 0 16 16">
+                                        <path
+                                            d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z" />
+                                        <path
+                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                    </svg>
+                                    <span><%= start_date %> - <%= end_date %></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card col" style="width: 200px;">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img style="height: 200px; width: 160px" src="https://img.freepik.com/premium-vector/cartoon-drawing-pilot_29937-8168.jpg?w=2000" class="card-img-top"
+                            alt="Fissure in Sandstone" />
+                    </div>
+                    <div class="col-md-7 pt-4">
+                        <p class="float-left">
+                        <h6>Drone Pilot</h6>
+                        </p>
+                        <p class="float-left">
+                        <h6>John Roland</h6>
+                        </p>
+                        <div class="row">
+                            <p>License #: FA817G7834</p>
+                        </div>
+                        <div class="row">
+                            <p>Phone : 0912 665 8621</p>
+                        </div>
+                        <div class="row">
+                            <p><Address>6391 Elgin St Celina, Delaware</Address></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        <div style="width: 700px; border-radius:10px; background-color: #D3D3D3; margin-right: 20px;" class="card print p-3">
+            <div style="margin-top: 20px;" class="row">
+                <div class="col-md-4">
+                    <h6>Drone Based Cost<h6>
+                </div>
+                <div class="col-md-2">
+                    <h6>$<%= drone.price %></h6>
+                </div>
+                <div class="col-md-4">
+                    <h6>Materials</h6>
+                    <div>(None)</div>
+                </div>
+                <div class="col-md-2">
+                    <h6>$0</h6>
+                </div>
+            </div>
+            <hr style="border-top: dashed 1px;" />
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>Hourly Flights Per Day</h6>
+                    <p>1x 10:00AM Flight</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>$10</h6>
+                </div>
+                <div class="col-md-4">
+                    <h6>Equipment</h6>
+                    <div>1x Camera</div>
+                </div>
+                <div class="col-md-2">
+                    <h6>$0</h6>
+                </div>
+            </div>
+            <hr style="border-top: dashed 1px;" />
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>Hourly Service Operations Per Day</h6>
+                    <p>1x Data Collection - Crop Health</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>$10</h6>
+                </div>
+                <div class="col-md-4">
+                    <h6>Shipping</h6>
+                    <div>Deliver drone to farm</div>
+                </div>
+                <div class="col-md-2">
+                    <h6>$20</h6>
+                </div>
+            </div>
+            <hr style="border-top: dashed 1px;" />
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>Service Duration</h6>
+                    <p>1 Day - On Demand</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>x1</h6>
+                </div>
+                <div class="col-md-4">
+                    <h6>Pilot Charge</h6>
+                    <div>Drone setup and labor</div>
+                </div>
+                <div class="col-md-2">
+                    <h6>$20</h6>
+                </div>
+            </div>
+            <hr style="border-top: dashed 1px;" />
+            <div class="row">
+                <div class="col-md-4">
+                    <h6>Payment Method</h6>
+                    <p>Total Price</p>
+                </div>
+                <div class="col-md-2">
+                    <h6>Card Ending in xxxx</h6>
+                    <h6>$<%= total_cost %></h6>
+                </div>
+            </div>
+        </div>
+        <div class="card w-50">
+            <h5>Bill Id - <%= bill_id %></h5>
+        </div>
+        <div class="no-print" style="width:500px; margin-top: 20px; margin-bottom: 100px;">
+            <div style ="float: right; width: 300px"><button style="display: float-right;" class="btn btn-secondary btn-block" onclick="jsPrintAll()">Print Invoice</button></div>
+        </div> 
+    </div>
+
+    <%- include('../partials/sidebarFooter'); %>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+        <style>
+            .card-registration .select-input.form-control[readonly]:not([disabled]) {
+                font-size: 1rem;
+                line-height: 2.15;
+                padding-left: .75em;
+                padding-right: .75em;
+            }
+
+            .card-registration .select-arrow {
+                top: 13px;
+            }
+        </style>
+</head>
+
+<body style="background-color: rgb(233, 233, 233);">
+  
+<div class="container" style="width: 65vw;">
+    <div class="card p-4">
+        <div class="row">
+            <div class="col">
+                <img src = "https://media.wired.com/photos/6001fbab46fafaafdfe41e64/master/w_2580,c_limit/Gear-DJI-Mini-2-angle-bottom-SOURCE-DJI.jpg" style="background-size: cover; width: 370px; height: 300px; border-radius: 10px;">
+            </div>
+            <div class="col">
+                <h3>Sign In</h3>
+                <hr>
+                <% if(error != null){ %>
+                    <div class="card p-3 m-2" style="background-color: rgba(248, 142, 142, 0.164); color:rgb(252, 97, 97)"><span>*&nbsp <%= error %></span></div>
+               <% } %>
+                
+                <form action="/signin" method="post">
+                    <div class="form-group">
+                      <label for="email">Email address</label>
+                      <input type="email" class="form-control" name="email"  placeholder="Enter email" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="password">Password</label>
+                      <input type="password" class="form-control" name="password" placeholder="Password" required>
+                    </div>
+                      
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                    <span class="float-right" style="font-size:12px; margin-top: 20px;">Go to <a href="../signup">Sign Up</a></span>
+                  </form>
+            </div>
+        </div>
+      
+    </div>
+    </div>
+</body>
+<%- include('../partials/footer'); %>
+
+</html>

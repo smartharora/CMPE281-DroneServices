@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta http-equiv="refresh" content="5;" URL="https:localhost:3000/form"> -->
+    <title>CMPE 281</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.2/css/intlTelInput.css'>
+    <link rel='stylesheet' href='https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css'>
+    <link rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css'>
+    <link rel="stylesheet" href="style/style.css">
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <!-- Multi step form -->
+    <section class="multi_step_form">
+        <form id="msform" action="/form" method="post">
+            <!-- Tittle -->
+            <div class="title">
+                <h2>Register Process</h2>
+            </div>
+            <!-- progressbar -->
+            <ul id="progressbar">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!-- fieldsets -->
+
+        
+            <!-- ROle Select -->
+            <fieldset>
+                <h2>Welcome !</h2>
+                <h5>Let's Finish your registration.</h5>
+
+                <div class="done_text">
+                    <h3>Select Role to Register As</h3>
+
+                </div>
+                <br>
+                <div>
+
+                    <div>
+                        <input type="radio" name="isFarmer" id="option1" autocomplete="off" checked value="Farmer" />
+                        <label class="btn btn-secondary m-2" for="option1">Farmer</label>
+
+                        <input type="radio" name="isFarmer" id="option2" autocomplete="off" value="Pilot" />
+                        <label class="btn btn-secondary m-2" for="option2">Pilot</label>
+
+
+                    </div>
+                </div>
+                <br>
+                <button type="button" class="action-button previous_button">Back</button>
+                <button type="button" class="next action-button">Continue</button>
+            </fieldset>
+            <!-- Farmer Information -->
+            <fieldset>
+                <h3>Farmer Information</h3>
+                <h6>Fill in the data for your profile. It will only take a couple of minutes.</h6>
+                <div class="card p-2">
+                    <div class="form-group">
+                        <label class="float-left" for="farmer1">Name</label>
+                        <input type="text" class="form-control" name="farmer_name" id="farmer1" 
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="farmer2">Phone Number</label>
+                        <input type="text" class="form-control" name="farmer_phone_number" id="farmer2" length="10"
+                             required>
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="farmer3">Email</label>
+                        <input type="email" class="form-control" name="farmer_email" id="farmer3"
+                             required>
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="farmer4">Birth Day</label>
+                        <!-- ######################################### Birthday validation ###################################### -->
+                        <input type="date" class="form-control" name="farmer_birthday" max="2022-12-06" id="farmer4" >
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="farmer5">Gender</label>
+                        <select class="product_select form-select w-100" id="farmer5" name="farmer_gender" aria-label="Default select example"
+                            required>
+                            <option value="Male" selected>Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <br><br>
+                <button type="button" class="action-button previous previous_button">Back</button>
+                <button type="button" class="next action-button">Continue</button>
+            </fieldset>
+
+
+            <!-- Farm Information -->
+            <fieldset>
+                <h3>Farm Information</h3>
+                <h6>Fill in the data for your farm. It will only take a couple of minutes.</h6>
+                <div class="card p-2">
+                    <span>
+                        <h3 class="float-left p-2">Farm address</h3>
+                    </span>
+                    <div class="form-group">
+                        <label class="float-left" for="farm1">Name</label>
+                        <input type="text" class="form-control" name="farm_name" id="farm1" 
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="farm2">Address</label>
+                        <input type="text" class="form-control" name="farm_address" id="farm2"
+                             required>
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="farm3">City</label>
+                        <select class="form-select w-100" id="farm3" aria-label="Select City" name="farm_city" style="overflow-y: hidden;" required>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <!-- <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option> -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+
+                        <label class="float-left" for="farm4">Country</label>
+                        <select class="form-select w-100" id="farm4" aria-label="Select City" name="farm_country"
+                            required>
+                            <option value="USA" selected>USA</option>
+                            <!-- <option value="India">India</option>
+                            <option value="London">London</option> -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="farm5">Zip Code</label>
+                        <input type="text" class="form-control" name="farm_zipcode" id="farm5"  length="6" placeholder="000000"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <br><br>
+                <button type="button" class="action-button previous previous_button">Back</button>
+                <button type="button" class="next action-button">Continue</button>
+            </fieldset>
+                <!-- Farmland Information -->
+            <fieldset>
+                <h3>FarmLand Information</h3>
+                <h6>Fill in the data for your farmland.</h6>
+                <div class="card p-2">
+                    <span>
+                        <h3 class="float-left p-2">Farm Plot 1</h3>
+                    </span>
+                    <div class="form-group">
+                        <label class="float-left" for="farmland1">Plot Type</label>
+                        <select class="form-select w-100" id="farmland1" aria-label="Select Plot type"
+                            name="farmland_type" required>
+                            <option value="Livestock">Livestock</option>
+                            <option value="Crop">Crop</option>
+                            <option value="Fruit">Fruit</option>
+                            <option value="Nursery">Nursery</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="farmland_longitude" id="farmland3" value="-121.807021" hidden>
+                        <input type="text" class="form-control" name="farmland_latitude" id="farmland3" value="37.313929" hidden>
+                        <input type="text" class="form-control" name="farmland_square_ft" id="farmland3" value="400" hidden>
+
+                        <label class="float-left" for="farmland2">Type(in detail)</label>
+                        <input type="text" class="form-control" name="farmland_type_detail" id="farmland2"
+                            style="border:0px; border-bottom:1px solid black;"  required>
+                    </div>
+
+
+                </div>
+
+
+                <br><br>
+                <button type="button" class="action-button previous previous_button">Back</button>
+                <button type="button" class="next action-button">Continue</button>
+            </fieldset>
+           
+           
+            <!-- OwnerShip verification Information -->
+            <fieldset>
+                <h2>Let's verify your Farm.</h2>
+                <h5>Fill in more data regarding your farm certification.</h5>
+                <div class="card p-2">
+                    <span>
+                        <h3 class="float-left p-2">Land Ownership Certificate</h3>
+                    </span>
+                    <div class="form-group">
+                        <label class="float-left" for="ownership1">Name of Land Owner</label>
+                        <input type="text" class="form-control" name="owner['name']" id="ownership1"
+                             required>
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="ownership2">Address</label>
+                        <input type="text" class="form-control" name="owner['address']" id="ownership2"
+                             required>
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="ownership3">City</label>
+                        <select class="form-select w-100" id="ownership3" aria-label="Select City" name="owner['city']"
+                            required>
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="DC">District Of Columbia</option>
+                            <option value="FL">Florida</option>
+                            <!-- <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option> -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="float-left" for="ownership4">Country</label>
+                                <select class="form-select w-100" id="ownership4" aria-label="Select Country"
+                                    name="owner['country']" required>
+                                    <option value="USA" selected>USA</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="float-left" for="ownership5">Zip Code</label>
+                                    <input type="text" class="form-control" name="owner['zipcode']" id="ownership5" length="6"
+                                         required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="float-left" for="ownership6">Total Area(square feet)</label>
+                                <input type="number" class="form-control" name="owner['total_square_ft']" min="0" id="ownership6"
+                                     required>
+                            </div>
+                            <div class="col-md-6">
+
+                                <label class="float-left" for="ownership7">Date of certificate issue</label>
+                                <input type="date" class="form-control" name="owner['certificate_date']" id="ownership7"
+                                     required>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="form_group">
+                        <label class="float-left" for="ownership6">Certificate Url</label>
+                        <input type="url" class="form-control mb-2" name="owner['certificate_url']" id="ownership6"
+                             required>
+                    </div>
+
+
+                </div>
+                <br><br>
+                <button type="button" class="action-button previous previous_button">Back</button>
+                <button type="button" class="next action-button">Continue</button>
+            </fieldset>
+
+             <!-- Verify Identity  -->
+             <fieldset>
+                <h2>Let's verify your identity.</h2>
+                <h5>Please upload your driver's license</h5>
+                <div class="card p-2">
+                    <span>
+                        <h3 class="float-left p-2">Driver's License</h3>
+                    </span>
+                    <div class="form-group">
+                        <label class="float-left" for="identity1">Name</label>
+                        <input type="text" class="form-control" name="farmer['dl_name']" id="identity1"
+                             required>
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="identity2">License ID</label>
+                        <input type="text" class="form-control" name="farmer['dl_number']" id="identity2"
+                             required>
+                    </div>
+                   <div class="form_group">
+                        <label class="float-left" for="identity3">Licence Image Url</label>
+                        <input type="url" class="form-control mb-2" name="farmer['dl_url']" id="identity3"
+                             required>
+                    </div>
+                </div>
+                <br><br>
+                <button type="button" class="action-button previous previous_button">Back</button>
+                <button type="button" class="next action-button">Continue</button>
+                <!-- <button type="submit" class="btn btn-secondary">Finish</button> -->
+               
+            </fieldset>
+
+             <!-- Billing Information -->
+             <fieldset>
+                <h2>Billing Information</h3>
+                <h5>Fill in the billing information for your profile</h5>
+                <div class="card p-2">
+                    <span>
+                        <h3 class="float-left p-2">Credit Card Information</h3>
+                    </span>
+                    <div class="form-group">
+                        <label class="float-left" for="billing1">Name on card</label>
+                        <input type="text" class="form-control" name="billing['card_name']" id="billing1" 
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label class="float-left" for="billing2">Card Number</label>
+                        <input type="text" class="form-control" name="billing['card_number']" id="billing2"
+                             required>
+                    </div>
+                   
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label class="float-left " for="billing3">Expiration</label>
+                                <input type="text" class="form-control"  id="billing3" name="billing['expiration_date']" >
+                            </div>
+                            <div class="col-md-6">
+                                <label class="float-left" for="billing4">CVV</label>
+                                <input type="text" class="form-control"   id="billing4" name="billing['cvv']" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <button type="button" class="action-button previous previous_button">Back</button>
+                <button type="submit" class="action-button">Finish</button>
+               
+            </fieldset>
+
+
+           
+
+          
+
+
+        </form>
+    </section>
+    <!-- End Multi step form -->
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/12.1.2/js/intlTelInput.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js'></script>
+
+    <script src="scripts/multiFormScript.js"></script>
+    <script>
+        function register(){
+            console.log('submitting');
+            document.getElementById('msform').submit();
+        }
+        
+        
+
+    </script>
+
+</body>
+
+</html>

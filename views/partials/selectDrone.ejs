@@ -1,0 +1,37 @@
+<div class="container d-flex flex-wrap p-2 ">
+    <% for(var i=0; i<drone.length; i++){ %>
+        <div class="card m-2" style="width: 400px; border-radius: 10px;">
+            <div class="card-body">
+            <div class="row">
+                <div class="col">
+                  <h5><b><%= drone[i].model %></b></h5>
+                  <h5><b><%= drone[i].service %></b></h5>  
+                  <h6>ID #<%= drone[i].id %></h6>
+                  <h6><%= drone[i].Gimbal %> Gimbal</h6>
+                  <h6><%= drone[i].Camera %> Camera</h6>
+                  <h6><%= drone[i].flight_time %> Flight Time</h6>
+                  <h6><%= drone[i].flight_speed %> Flight Speed</h6>
+                  <h6><%= drone[i].weight %></h6>
+                </div>
+            
+                <div class="col">
+                    <img style="width: 150px;" src="<%= drone[i].img_url %>" alt="">
+                </div>
+            </div>
+            <hr>
+            <div class="row p-2">
+                <div class="col-md-6">
+                    <span class="p-3" style="font-size: 20px; color:grey; line-height: 60px;" ><b style="color:black">$<%= drone[i].price %></b>/hr</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="radio" name="drone_id" class="float-right mr-3" style="width: 30px; height:30px; margin-top: 10px;" value="<%= drone[i].id %>"
+                    <% if(i==0){ %>
+                        checked
+                    <%} %>
+                    > 
+                </div>
+            </div>
+        </div>
+        </div>
+    <% } %>
+    </div>

@@ -1,0 +1,29 @@
+<div class="container p-3" style="width: 800px; border: 1px dashed grey; border-radius:10px;">
+    <h3 class="float-left w-100">Step 2: Duration Selection</h3>
+    <h5 class="float-left w-100" style="color: grey;">Please select the start and end date and time for the service.</h5>
+    <br>
+
+<div class="container w-100" style="margin-top: 60px;">
+    <form class="card p-2" action="/selectDrone" method="post">
+    <input type="text" name="farmland" value="<%= farmland %>" hidden>
+
+        <div class="row">
+            <div class="col">
+                <div class="form-group m-3">
+                <label for="startTime">Start Date and time</label><br>
+                <input type="date" class="p-3" id ="startTime" name="startDate" style="height: 40px; border-radius: 10px;">
+            </div>
+            </div>
+            <div class="col">
+                <div class="form-group float-right m-3">
+                <label for="endTime">End Date and time</label><br>
+                <input type="date" class="p-3" id ="endTime" name="endDate" style="height: 40px; border-radius: 10px;">
+            </div>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary w-900" style="height: 50px; border-radius: 10px; margin: 20px; margin-top: 50px;">Next</button>
+</form>
+
+</div>
+</div>

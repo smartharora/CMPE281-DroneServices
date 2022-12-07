@@ -1,0 +1,59 @@
+<div class="container p-3" style="width: 800px; border: 1px dashed grey; border-radius:10px;">
+    <h2 class="float-left w-100">Step 1: Farmland selection</h2>
+    <h5 class="float-left w-100" style="color: grey;">Please select the farmland you would like your drone service on.</h5>
+    <br>
+    <form action="/selectDuration" method="post" class="w-100 d-flex flex-wrap justify-content-around">
+    <% for(var i=0; i<farmlands.length; i++){ %>
+  <div>
+      <input type="radio" id = "<%= farmlands[i]._id.toString() %>" value="<%= farmlands[i]._id.toString() %>" name="farmland" style="width:15px; margin-right: -10px;" required>
+  <label for="<%= farmlands[i]._id.toString() %>">
+  <div class="card p-2 pt-5 m-4" style="border-radius:10px;cursor: pointer; width: 18rem;color:white; background-image: url('https://www.netafimusa.com/48da28/globalassets/demo/products-and-solutions/open-fields/open_fields_headvisual-graded.jpg?height=0&width=750&mode=crop&quality=80');" id = "<%= farmlands[i]._id.toString() %>">
+    <div class="card-body">  
+    <span style="font-size: 30px; font-weight:bold; "><%= farmlands[i].land_type %></span>
+      <br>
+        <span style="font-size: 20px; font-weight:400"><%= farmlands[i].type_detail %></span>
+      </div>
+    </div>
+  </label>
+</div>
+  <% } %>
+  <div>
+  <input type="radio" id = "id2" value="id2" name="farmland" style="width:15px; margin-right: -10px;">
+  <label for="id2">
+  <div class="card p-2 pt-5 m-4" style="border-radius:10px;cursor: pointer; width: 18rem;color:white; background-image: url('https://www.malibugardenclub.org/wp-content/uploads/apple-trees.jpg');" id = "2">
+    <div class="card-body">  
+    <span style="font-size: 30px; font-weight:bold; ">Fruit</span>
+      <br>
+        <span style="font-size: 20px; font-weight:400">Apple</span>
+      </div>
+    </div>
+  </label>
+</div>
+<div>
+  <input type="radio" id = "id3" value="id3" name="farmland" style="width:15px; margin-right:-10px;">
+  <label for="id3">
+    <div class="card p-2 pt-5 m-4" style="border-radius:10px;cursor: pointer; width: 18rem;color:white; background-image: url('https://www.schottnurseries.com/x/cdn/?https://storage.googleapis.com/production-homestead-v1-0-3/603/688603/7GZ0JfIK/c4428350622f42b7abb08abb6241008c'); background-size: 300px;" id = "3">
+      <div class="card-body">  
+      <span style="font-size: 30px; font-weight:bold; ">Nursery</span>
+        <br>
+          <span style="font-size: 20px; font-weight:400">Rose Flowers</span>
+        </div>
+      </div>
+    </label>
+  </div>
+  <div>
+      <input type="radio" id = "id4" value="id4" name="farmland" style="width:15px; margin-right: -10px;">
+  <label for="id4">
+      <div class="card p-2 pt-5 m-4" style="border-radius:10px;cursor: pointer; width: 18rem;color:white; background-image: url('https://media.istockphoto.com/id/1141428796/photo/cute-white-and-brown-calf-looking-at-camera-in-barn-meat-industry-concept.jpg?s=612x612&w=0&k=20&c=riLML-bg6UBW_1xe9CTPz1mltNc48qZCIHhXtX_IWuI='); background-size: 300px;" id = "4">
+        <div class="card-body">  
+        <span style="font-size: 30px; font-weight:bold; ">Livestock</span>
+          <br>
+            <span style="font-size: 20px; font-weight:400">Cows</span>
+          </div>
+        </div>
+      </label>
+    </div>
+
+    <button class="btn btn-primary" style="width: 300px;" value="famland_submit">Next</button>
+</form>
+</div>

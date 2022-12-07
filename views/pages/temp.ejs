@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cmpe 281</title>
+  <%- include('../partials/head'); %>
+    <%- include('../partials/sidebarHeader'); %>
+</head>
+
+<body>
+
+  <%- include('../partials/sidebar'); %>
+    <div class="row p-3">
+      <div class="col-lg-8">
+        <h1>Welcome User !</h1>
+        <span style="font-size: 20px; color:grey">Check the status of your drone service booking here.</span>
+      </div>
+      <div class="col-lg-4">
+        <img src="https://static.vecteezy.com/system/resources/previews/004/987/116/original/illustration-indian-farmer-on-his-farm-doing-farming-farmer-working-on-field-illustration-character-design-background-happy-farmers-day-free-vector.jpg"
+          style="border-radius: 100%; width: 200px;" alt="">
+      </div>
+    </div>
+    <hr>
+    <div class="row mt-2">
+      <h4 class="m-2">All Bookings</h4>
+      <input class="form-control m-2" id="myInput" type="text" placeholder="Search">
+
+      <table class="table p-2" style="background-color: white;">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody id="myTable">
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <%- include('../partials/sidebarFooter'); %>
+
+</body>
+
+
+</html>
