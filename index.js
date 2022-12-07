@@ -3,7 +3,7 @@ const register = require('./routes/register');
 const drone = require('./routes/drone');
 const farmland = require('./routes/farmland');
 const booking = require('./routes/booking');
-
+const dashboard = require('./routes/dashboard');
 
 var cors = require('cors');
 var express = require('express');
@@ -45,9 +45,10 @@ app.get('/', function (req, res) {
   }
 });
 
-app.get('/temp', function(req,res){
-  res.render('pages/temp');
-})
+// app.get('/temp', function(req,res){
+//   res.render('pages/temp' , {'user_id': req.session.user_id});
+// })
+app.get('/dashboard', dashboard.getDashBoard );
 app.get('/selectFarmland', booking.getfarmlands);
 app.post('/selectDuration', booking.selectedFarmland);
 app.post('/selectDrone',booking.selectedDuration);

@@ -69,6 +69,8 @@ exports.createBooking = async(req,res)=>{
         'user_id':new ObjectId(uid),
         'dron_id':drone_id,
         'farmland_id': farmland,
+        'service': dron_rec.service,
+        'status':'Booked',
         start_date,
         end_date
     }

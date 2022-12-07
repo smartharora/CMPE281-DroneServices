@@ -8,6 +8,18 @@
   <title>Cmpe 281</title>
   <%- include('../partials/head'); %>
     <%- include('../partials/sidebarHeader'); %>
+
+    <style>
+      .Booked{
+        color:red;
+      }
+      .Active{
+        color:green;
+      }
+      .Finished{
+        color:blue;
+      }
+    </style>
 </head>
 
 <body>
@@ -15,7 +27,7 @@
   <%- include('../partials/sidebar'); %>
     <div class="row p-3">
       <div class="col-lg-8">
-        <h1>Welcome User !</h1>
+        <h1>Welcome <%= user_name %> !</h1>
         <span style="font-size: 20px; color:grey">Check the status of your drone service booking here.</span>
       </div>
       <div class="col-lg-4">
@@ -31,30 +43,38 @@
       <table class="table p-2" style="background-color: white;">
         <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Service ID#</th>
+            <th scope="col">Farmland</th>
+            <th scope="col">Land Type</th>
+            <th scope="col">Service Type</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Trigger Simulation</th>
           </tr>
         </thead>
-        <tbody id="myTable">
+        <tbody id="myTable" >
+          <% for(var i=0; i<booking.length; i++){ %> 
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <td> ID# <%= booking[i]._id %></td>
+            <td><%= booking[i].farmland %></td>
+            <td><%= booking[i].land_type %></td>
+            <td>Rental: <%= booking[i].service %> </td>
+            <td><%= booking[i].start_date %></td>
+            <td><%= booking[i].end_date %>2</td>
+            <td class="<%= booking[i].status %>"><%= booking[i].status %></td>
+            <td><button class="btn btn-dark">Start Simulation</button></td>
           </tr>
+          <% } %>
           <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <td> ID# 65</td>
+            <td>East Ploat A</td>
+            <td>Crop</td>
+            <td>Rental: Data Collection</td>
+            <td>12/01/2022</td>
+            <td>12/01/2022</td>
+            <td class="Active">Active</td>
+            <td><button class="btn btn-dark">Start Simulation</button></td>
           </tr>
         </tbody>
       </table>
